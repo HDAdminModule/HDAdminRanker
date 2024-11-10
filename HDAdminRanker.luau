@@ -1,294 +1,418 @@
--- Gui to Lua
--- Version: 3.2
+-- // GUI TO LUA \\ --
 
--- Instances:
+-- // INSTANCES: 52 | SCRIPTS: 16 | MODULES: 0 \\ --
 
-local HDAdminRanks = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local Frame2 = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local HDVip = Instance.new("TextButton")
-local Circle = Instance.new("ImageLabel")
-local HDMod = Instance.new("TextButton")
-local Circle_2 = Instance.new("ImageLabel")
-local HDAdmin = Instance.new("TextButton")
-local Circle_3 = Instance.new("ImageLabel")
-local HDHeadAdmin = Instance.new("TextButton")
-local Circle_4 = Instance.new("ImageLabel")
-local HDOwner = Instance.new("TextButton")
-local Circle_5 = Instance.new("ImageLabel")
-local HDAboveOwner = Instance.new("TextButton")
-local Circle_6 = Instance.new("ImageLabel")
-local Close = Instance.new("TextButton")
-local Circle_7 = Instance.new("ImageLabel")
-local HDAdminLoader = Instance.new("TextButton")
-local Circle_8 = Instance.new("ImageLabel")
+local UI = {}
 
---Properties:
+-- // Workspace.HDAdminRanks \\ --
+UI["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"))
+UI["1"]["Name"] = [[HDAdminRanks]]
+UI["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling
+UI["1"]["ResetOnSpawn"] = false
 
-HDAdminRanks.Name = "HDAdminRanks"
-HDAdminRanks.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-HDAdminRanks.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-HDAdminRanks.ResetOnSpawn = false
+-- // Workspace.HDAdminRanks.Frame \\ --
+UI["2"] = Instance.new("Frame", UI["1"])
+UI["2"]["BorderSizePixel"] = 0
+UI["2"]["BackgroundColor3"] = Color3.fromRGB(57, 57, 57)
+UI["2"]["Size"] = UDim2.new(0, 540, 0, 367)
+UI["2"]["Position"] = UDim2.new(0.2806, -28, 0.19213, -34)
+UI["2"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
 
-Frame.Parent = HDAdminRanks
-Frame.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
-Frame.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.280600458, -28, 0.192125976, -34)
-Frame.Size = UDim2.new(0, 540, 0, 367)
+-- // Workspace.HDAdminRanks.Frame.Dragify \\ --
+UI["3"] = Instance.new("LocalScript", UI["2"])
+UI["3"]["Name"] = [[Dragify]]
 
-Frame2.Name = "Frame2"
-Frame2.Parent = Frame
-Frame2.BackgroundColor3 = Color3.fromRGB(163, 214, 116)
-Frame2.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Frame2.BorderSizePixel = 0
-Frame2.Position = UDim2.new(0.0150671303, 0, 0.022163108, 0)
-Frame2.Size = UDim2.new(0, 523, 0, 350)
+-- // Workspace.HDAdminRanks.Frame.Frame2 \\ --
+UI["4"] = Instance.new("Frame", UI["2"])
+UI["4"]["BorderSizePixel"] = 0
+UI["4"]["BackgroundColor3"] = Color3.fromRGB(164, 215, 117)
+UI["4"]["Size"] = UDim2.new(0, 523, 0, 350)
+UI["4"]["Position"] = UDim2.new(0.01507, 0, 0.02216, 0)
+UI["4"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["4"]["Name"] = [[Frame2]]
 
-TextLabel.Parent = Frame2
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 0.800
-TextLabel.BorderColor3 = Color3.fromRGB(27, 42, 53)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.22753346, 0, 0, 0)
-TextLabel.Size = UDim2.new(0, 300, 0, 50)
-TextLabel.Font = Enum.Font.Gotham
-TextLabel.Text = "HD Admin Ranks Giver"
-TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
+-- // Workspace.HDAdminRanks.Frame.Frame2.TextLabel \\ --
+UI["5"] = Instance.new("TextLabel", UI["4"])
+UI["5"]["TextWrapped"] = true
+UI["5"]["BorderSizePixel"] = 0
+UI["5"]["TextScaled"] = true
+UI["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+UI["5"]["TextSize"] = 14
+UI["5"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["5"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["5"]["BackgroundTransparency"] = 0.8
+UI["5"]["Size"] = UDim2.new(0, 300, 0, 50)
+UI["5"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["5"]["Text"] = [[HD Admin Ranks Giver]]
+UI["5"]["Position"] = UDim2.new(0.22753, 0, 0, 0)
 
-HDVip.Name = "HD Vip"
-HDVip.Parent = Frame2
-HDVip.BackgroundColor3 = Color3.fromRGB(144, 222, 255)
-HDVip.BorderColor3 = Color3.fromRGB(27, 42, 53)
-HDVip.BorderSizePixel = 0
-HDVip.ClipsDescendants = true
-HDVip.Position = UDim2.new(0.0439770557, 0, 0.205714285, 0)
-HDVip.Size = UDim2.new(0, 200, 0, 50)
-HDVip.AutoButtonColor = false
-HDVip.Font = Enum.Font.Gotham
-HDVip.Text = "HD Vip"
-HDVip.TextColor3 = Color3.fromRGB(0, 0, 0)
-HDVip.TextScaled = true
-HDVip.TextSize = 14.000
-HDVip.TextWrapped = true
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Vip \\ --
+UI["6"] = Instance.new("TextButton", UI["4"])
+UI["6"]["TextWrapped"] = true
+UI["6"]["BorderSizePixel"] = 0
+UI["6"]["AutoButtonColor"] = false
+UI["6"]["TextSize"] = 14
+UI["6"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["6"]["TextScaled"] = true
+UI["6"]["BackgroundColor3"] = Color3.fromRGB(145, 223, 255)
+UI["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["6"]["Size"] = UDim2.new(0, 200, 0, 50)
+UI["6"]["Name"] = [[HD Vip]]
+UI["6"]["ClipsDescendants"] = true
+UI["6"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["6"]["Text"] = [[HD Vip]]
+UI["6"]["Position"] = UDim2.new(0.04398, 0, 0.20571, 0)
 
-Circle.Name = "Circle"
-Circle.Parent = game.StarterGui.HDAdminRanks.Frame["Frame2"].HD Vip.RippleEffect
-Circle.AnchorPoint = Vector2.new(0.5, 0.5)
-Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Circle.BackgroundTransparency = 1.000
-Circle.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Circle.Position = UDim2.new(0.5, 0, 0.5, 0)
-Circle.ZIndex = 10
-Circle.Image = "rbxassetid://266543268"
-Circle.ImageColor3 = Color3.fromRGB(0, 0, 0)
-Circle.ImageTransparency = 0.500
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Vip.Script \\ --
+UI["7"] = Instance.new("Script", UI["6"])
 
-HDMod.Name = "HD Mod"
-HDMod.Parent = Frame2
-HDMod.BackgroundColor3 = Color3.fromRGB(144, 222, 255)
-HDMod.BorderColor3 = Color3.fromRGB(27, 42, 53)
-HDMod.BorderSizePixel = 0
-HDMod.ClipsDescendants = true
-HDMod.Position = UDim2.new(0.0439770557, 0, 0.428571433, 0)
-HDMod.Size = UDim2.new(0, 200, 0, 50)
-HDMod.AutoButtonColor = false
-HDMod.Font = Enum.Font.Gotham
-HDMod.Text = "HD Mod"
-HDMod.TextColor3 = Color3.fromRGB(0, 0, 0)
-HDMod.TextScaled = true
-HDMod.TextSize = 14.000
-HDMod.TextWrapped = true
 
-Circle_2.Name = "Circle"
-Circle_2.Parent = game.StarterGui.HDAdminRanks.Frame["Frame2"].HD Mod.RippleEffect
-Circle_2.AnchorPoint = Vector2.new(0.5, 0.5)
-Circle_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Circle_2.BackgroundTransparency = 1.000
-Circle_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Circle_2.Position = UDim2.new(0.5, 0, 0.5, 0)
-Circle_2.ZIndex = 10
-Circle_2.Image = "rbxassetid://266543268"
-Circle_2.ImageColor3 = Color3.fromRGB(0, 0, 0)
-Circle_2.ImageTransparency = 0.500
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Vip.LocalScript \\ --
+UI["8"] = Instance.new("LocalScript", UI["6"])
 
-HDAdmin.Name = "HD Admin"
-HDAdmin.Parent = Frame2
-HDAdmin.BackgroundColor3 = Color3.fromRGB(144, 222, 255)
-HDAdmin.BorderColor3 = Color3.fromRGB(27, 42, 53)
-HDAdmin.BorderSizePixel = 0
-HDAdmin.ClipsDescendants = true
-HDAdmin.Position = UDim2.new(0.0439770557, 0, 0.648571432, 0)
-HDAdmin.Size = UDim2.new(0, 200, 0, 50)
-HDAdmin.AutoButtonColor = false
-HDAdmin.Font = Enum.Font.Gotham
-HDAdmin.Text = "HD Admin"
-HDAdmin.TextColor3 = Color3.fromRGB(0, 0, 0)
-HDAdmin.TextScaled = true
-HDAdmin.TextSize = 14.000
-HDAdmin.TextWrapped = true
 
-Circle_3.Name = "Circle"
-Circle_3.Parent = game.StarterGui.HDAdminRanks.Frame["Frame2"].HD Admin.RippleEffect
-Circle_3.AnchorPoint = Vector2.new(0.5, 0.5)
-Circle_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Circle_3.BackgroundTransparency = 1.000
-Circle_3.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Circle_3.Position = UDim2.new(0.5, 0, 0.5, 0)
-Circle_3.ZIndex = 10
-Circle_3.Image = "rbxassetid://266543268"
-Circle_3.ImageColor3 = Color3.fromRGB(0, 0, 0)
-Circle_3.ImageTransparency = 0.500
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Vip.RemoteEvent \\ --
+UI["9"] = Instance.new("RemoteEvent", UI["6"])
 
-HDHeadAdmin.Name = "HD HeadAdmin"
-HDHeadAdmin.Parent = Frame2
-HDHeadAdmin.BackgroundColor3 = Color3.fromRGB(144, 222, 255)
-HDHeadAdmin.BorderColor3 = Color3.fromRGB(27, 42, 53)
-HDHeadAdmin.BorderSizePixel = 0
-HDHeadAdmin.ClipsDescendants = true
-HDHeadAdmin.Position = UDim2.new(0.514340341, 0, 0.205714285, 0)
-HDHeadAdmin.Size = UDim2.new(0, 200, 0, 50)
-HDHeadAdmin.AutoButtonColor = false
-HDHeadAdmin.Font = Enum.Font.Gotham
-HDHeadAdmin.Text = "HD HeadAdmin"
-HDHeadAdmin.TextColor3 = Color3.fromRGB(0, 0, 0)
-HDHeadAdmin.TextScaled = true
-HDHeadAdmin.TextSize = 14.000
-HDHeadAdmin.TextWrapped = true
 
-Circle_4.Name = "Circle"
-Circle_4.Parent = game.StarterGui.HDAdminRanks.Frame["Frame2"].HD HeadAdmin.RippleEffect
-Circle_4.AnchorPoint = Vector2.new(0.5, 0.5)
-Circle_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Circle_4.BackgroundTransparency = 1.000
-Circle_4.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Circle_4.Position = UDim2.new(0.5, 0, 0.5, 0)
-Circle_4.ZIndex = 10
-Circle_4.Image = "rbxassetid://266543268"
-Circle_4.ImageColor3 = Color3.fromRGB(0, 0, 0)
-Circle_4.ImageTransparency = 0.500
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Vip.RippleEffect \\ --
+UI["a"] = Instance.new("LocalScript", UI["6"])
+UI["a"]["Name"] = [[RippleEffect]]
 
-HDOwner.Name = "HD Owner"
-HDOwner.Parent = Frame2
-HDOwner.BackgroundColor3 = Color3.fromRGB(144, 222, 255)
-HDOwner.BorderColor3 = Color3.fromRGB(27, 42, 53)
-HDOwner.BorderSizePixel = 0
-HDOwner.ClipsDescendants = true
-HDOwner.Position = UDim2.new(0.514340341, 0, 0.428571433, 0)
-HDOwner.Size = UDim2.new(0, 200, 0, 50)
-HDOwner.AutoButtonColor = false
-HDOwner.Font = Enum.Font.Gotham
-HDOwner.Text = "HD Owner"
-HDOwner.TextColor3 = Color3.fromRGB(0, 0, 0)
-HDOwner.TextScaled = true
-HDOwner.TextSize = 14.000
-HDOwner.TextWrapped = true
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Vip.RippleEffect.Circle \\ --
+UI["b"] = Instance.new("ImageLabel", UI["a"])
+UI["b"]["ZIndex"] = 10
+UI["b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+UI["b"]["ImageTransparency"] = 0.5
+UI["b"]["ImageColor3"] = Color3.fromRGB(0, 0, 0)
+UI["b"]["AnchorPoint"] = Vector2.new(0.5, 0.5)
+UI["b"]["Image"] = [[rbxassetid://266543268]]
+UI["b"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["b"]["BackgroundTransparency"] = 1
+UI["b"]["Name"] = [[Circle]]
+UI["b"]["Position"] = UDim2.new(0.5, 0, 0.5, 0)
 
-Circle_5.Name = "Circle"
-Circle_5.Parent = game.StarterGui.HDAdminRanks.Frame["Frame2"].HD Owner.RippleEffect
-Circle_5.AnchorPoint = Vector2.new(0.5, 0.5)
-Circle_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Circle_5.BackgroundTransparency = 1.000
-Circle_5.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Circle_5.Position = UDim2.new(0.5, 0, 0.5, 0)
-Circle_5.ZIndex = 10
-Circle_5.Image = "rbxassetid://266543268"
-Circle_5.ImageColor3 = Color3.fromRGB(0, 0, 0)
-Circle_5.ImageTransparency = 0.500
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Mod \\ --
+UI["c"] = Instance.new("TextButton", UI["4"])
+UI["c"]["TextWrapped"] = true
+UI["c"]["BorderSizePixel"] = 0
+UI["c"]["AutoButtonColor"] = false
+UI["c"]["TextSize"] = 14
+UI["c"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["c"]["TextScaled"] = true
+UI["c"]["BackgroundColor3"] = Color3.fromRGB(145, 223, 255)
+UI["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["c"]["Size"] = UDim2.new(0, 200, 0, 50)
+UI["c"]["Name"] = [[HD Mod]]
+UI["c"]["ClipsDescendants"] = true
+UI["c"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["c"]["Text"] = [[HD Mod]]
+UI["c"]["Position"] = UDim2.new(0.04398, 0, 0.42857, 0)
 
-HDAboveOwner.Name = "HD Above Owner"
-HDAboveOwner.Parent = Frame2
-HDAboveOwner.BackgroundColor3 = Color3.fromRGB(144, 222, 255)
-HDAboveOwner.BorderColor3 = Color3.fromRGB(27, 42, 53)
-HDAboveOwner.BorderSizePixel = 0
-HDAboveOwner.ClipsDescendants = true
-HDAboveOwner.Position = UDim2.new(0.514340341, 0, 0.648571432, 0)
-HDAboveOwner.Size = UDim2.new(0, 200, 0, 50)
-HDAboveOwner.AutoButtonColor = false
-HDAboveOwner.Font = Enum.Font.Gotham
-HDAboveOwner.Text = "HD Above Owner"
-HDAboveOwner.TextColor3 = Color3.fromRGB(0, 0, 0)
-HDAboveOwner.TextScaled = true
-HDAboveOwner.TextSize = 14.000
-HDAboveOwner.TextWrapped = true
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Mod.Script \\ --
+UI["d"] = Instance.new("Script", UI["c"])
 
-Circle_6.Name = "Circle"
-Circle_6.Parent = game.StarterGui.HDAdminRanks.Frame["Frame2"].HD Above Owner.RippleEffect
-Circle_6.AnchorPoint = Vector2.new(0.5, 0.5)
-Circle_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Circle_6.BackgroundTransparency = 1.000
-Circle_6.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Circle_6.Position = UDim2.new(0.5, 0, 0.5, 0)
-Circle_6.ZIndex = 10
-Circle_6.Image = "rbxassetid://266543268"
-Circle_6.ImageColor3 = Color3.fromRGB(0, 0, 0)
-Circle_6.ImageTransparency = 0.500
 
-Close.Name = "Close"
-Close.Parent = Frame2
-Close.BackgroundColor3 = Color3.fromRGB(255, 49, 49)
-Close.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Close.BorderSizePixel = 0
-Close.ClipsDescendants = true
-Close.Position = UDim2.new(0.850860417, 0, 0, 0)
-Close.Size = UDim2.new(0, 78, 0, 50)
-Close.AutoButtonColor = false
-Close.Font = Enum.Font.Gotham
-Close.Text = "X"
-Close.TextColor3 = Color3.fromRGB(0, 0, 0)
-Close.TextScaled = true
-Close.TextSize = 14.000
-Close.TextWrapped = true
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Mod.LocalScript \\ --
+UI["e"] = Instance.new("LocalScript", UI["c"])
 
-Circle_7.Name = "Circle"
-Circle_7.Parent = game.StarterGui.HDAdminRanks.Frame["Frame2"].Close.RippleEffect
-Circle_7.AnchorPoint = Vector2.new(0.5, 0.5)
-Circle_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Circle_7.BackgroundTransparency = 1.000
-Circle_7.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Circle_7.Position = UDim2.new(0.5, 0, 0.5, 0)
-Circle_7.ZIndex = 10
-Circle_7.Image = "rbxassetid://266543268"
-Circle_7.ImageColor3 = Color3.fromRGB(0, 0, 0)
-Circle_7.ImageTransparency = 0.500
 
-HDAdminLoader.Name = "HD Admin Loader"
-HDAdminLoader.Parent = Frame2
-HDAdminLoader.BackgroundColor3 = Color3.fromRGB(144, 222, 255)
-HDAdminLoader.BorderColor3 = Color3.fromRGB(27, 42, 53)
-HDAdminLoader.BorderSizePixel = 0
-HDAdminLoader.ClipsDescendants = true
-HDAdminLoader.Position = UDim2.new(0.21223709, 0, 0.828571439, 0)
-HDAdminLoader.Size = UDim2.new(0, 301, 0, 50)
-HDAdminLoader.AutoButtonColor = false
-HDAdminLoader.Font = Enum.Font.Gotham
-HDAdminLoader.Text = "HD Admin Loader (Only If HD Admin is not in the game)"
-HDAdminLoader.TextColor3 = Color3.fromRGB(0, 0, 0)
-HDAdminLoader.TextScaled = true
-HDAdminLoader.TextSize = 14.000
-HDAdminLoader.TextWrapped = true
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Mod.RemoteEvent \\ --
+UI["f"] = Instance.new("RemoteEvent", UI["c"])
 
-Circle_8.Name = "Circle"
-Circle_8.Parent = game.StarterGui.HDAdminRanks.Frame["Frame2"].HD Admin Loader.RippleEffect
-Circle_8.AnchorPoint = Vector2.new(0.5, 0.5)
-Circle_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Circle_8.BackgroundTransparency = 1.000
-Circle_8.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Circle_8.Position = UDim2.new(0.5, 0, 0.5, 0)
-Circle_8.ZIndex = 10
-Circle_8.Image = "rbxassetid://266543268"
-Circle_8.ImageColor3 = Color3.fromRGB(0, 0, 0)
-Circle_8.ImageTransparency = 0.500
 
--- Scripts:
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Mod.RippleEffect \\ --
+UI["10"] = Instance.new("LocalScript", UI["c"])
+UI["10"]["Name"] = [[RippleEffect]]
 
-local function DDDNRH_fake_script() -- Frame.Dragify 
-	local script = Instance.new('LocalScript', Frame)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Mod.RippleEffect.Circle \\ --
+UI["11"] = Instance.new("ImageLabel", UI["10"])
+UI["11"]["ZIndex"] = 10
+UI["11"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+UI["11"]["ImageTransparency"] = 0.5
+UI["11"]["ImageColor3"] = Color3.fromRGB(0, 0, 0)
+UI["11"]["AnchorPoint"] = Vector2.new(0.5, 0.5)
+UI["11"]["Image"] = [[rbxassetid://266543268]]
+UI["11"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["11"]["BackgroundTransparency"] = 1
+UI["11"]["Name"] = [[Circle]]
+UI["11"]["Position"] = UDim2.new(0.5, 0, 0.5, 0)
 
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin \\ --
+UI["12"] = Instance.new("TextButton", UI["4"])
+UI["12"]["TextWrapped"] = true
+UI["12"]["BorderSizePixel"] = 0
+UI["12"]["AutoButtonColor"] = false
+UI["12"]["TextSize"] = 14
+UI["12"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["12"]["TextScaled"] = true
+UI["12"]["BackgroundColor3"] = Color3.fromRGB(145, 223, 255)
+UI["12"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["12"]["Size"] = UDim2.new(0, 200, 0, 50)
+UI["12"]["Name"] = [[HD Admin]]
+UI["12"]["ClipsDescendants"] = true
+UI["12"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["12"]["Text"] = [[HD Admin]]
+UI["12"]["Position"] = UDim2.new(0.04398, 0, 0.64857, 0)
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin.Script \\ --
+UI["13"] = Instance.new("Script", UI["12"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin.LocalScript \\ --
+UI["14"] = Instance.new("LocalScript", UI["12"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin.RemoteEvent \\ --
+UI["15"] = Instance.new("RemoteEvent", UI["12"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin.RippleEffect \\ --
+UI["16"] = Instance.new("LocalScript", UI["12"])
+UI["16"]["Name"] = [[RippleEffect]]
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin.RippleEffect.Circle \\ --
+UI["17"] = Instance.new("ImageLabel", UI["16"])
+UI["17"]["ZIndex"] = 10
+UI["17"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+UI["17"]["ImageTransparency"] = 0.5
+UI["17"]["ImageColor3"] = Color3.fromRGB(0, 0, 0)
+UI["17"]["AnchorPoint"] = Vector2.new(0.5, 0.5)
+UI["17"]["Image"] = [[rbxassetid://266543268]]
+UI["17"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["17"]["BackgroundTransparency"] = 1
+UI["17"]["Name"] = [[Circle]]
+UI["17"]["Position"] = UDim2.new(0.5, 0, 0.5, 0)
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD HeadAdmin \\ --
+UI["18"] = Instance.new("TextButton", UI["4"])
+UI["18"]["TextWrapped"] = true
+UI["18"]["BorderSizePixel"] = 0
+UI["18"]["AutoButtonColor"] = false
+UI["18"]["TextSize"] = 14
+UI["18"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["18"]["TextScaled"] = true
+UI["18"]["BackgroundColor3"] = Color3.fromRGB(145, 223, 255)
+UI["18"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["18"]["Size"] = UDim2.new(0, 200, 0, 50)
+UI["18"]["Name"] = [[HD HeadAdmin]]
+UI["18"]["ClipsDescendants"] = true
+UI["18"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["18"]["Text"] = [[HD HeadAdmin]]
+UI["18"]["Position"] = UDim2.new(0.51434, 0, 0.20571, 0)
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD HeadAdmin.Script \\ --
+UI["19"] = Instance.new("Script", UI["18"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD HeadAdmin.LocalScript \\ --
+UI["1a"] = Instance.new("LocalScript", UI["18"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD HeadAdmin.RemoteEvent \\ --
+UI["1b"] = Instance.new("RemoteEvent", UI["18"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD HeadAdmin.RippleEffect \\ --
+UI["1c"] = Instance.new("LocalScript", UI["18"])
+UI["1c"]["Name"] = [[RippleEffect]]
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD HeadAdmin.RippleEffect.Circle \\ --
+UI["1d"] = Instance.new("ImageLabel", UI["1c"])
+UI["1d"]["ZIndex"] = 10
+UI["1d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+UI["1d"]["ImageTransparency"] = 0.5
+UI["1d"]["ImageColor3"] = Color3.fromRGB(0, 0, 0)
+UI["1d"]["AnchorPoint"] = Vector2.new(0.5, 0.5)
+UI["1d"]["Image"] = [[rbxassetid://266543268]]
+UI["1d"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["1d"]["BackgroundTransparency"] = 1
+UI["1d"]["Name"] = [[Circle]]
+UI["1d"]["Position"] = UDim2.new(0.5, 0, 0.5, 0)
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Owner \\ --
+UI["1e"] = Instance.new("TextButton", UI["4"])
+UI["1e"]["TextWrapped"] = true
+UI["1e"]["BorderSizePixel"] = 0
+UI["1e"]["AutoButtonColor"] = false
+UI["1e"]["TextSize"] = 14
+UI["1e"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["1e"]["TextScaled"] = true
+UI["1e"]["BackgroundColor3"] = Color3.fromRGB(145, 223, 255)
+UI["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["1e"]["Size"] = UDim2.new(0, 200, 0, 50)
+UI["1e"]["Name"] = [[HD Owner]]
+UI["1e"]["ClipsDescendants"] = true
+UI["1e"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["1e"]["Text"] = [[HD Owner]]
+UI["1e"]["Position"] = UDim2.new(0.51434, 0, 0.42857, 0)
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Owner.Script \\ --
+UI["1f"] = Instance.new("Script", UI["1e"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Owner.LocalScript \\ --
+UI["20"] = Instance.new("LocalScript", UI["1e"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Owner.RemoteEvent \\ --
+UI["21"] = Instance.new("RemoteEvent", UI["1e"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Owner.RippleEffect \\ --
+UI["22"] = Instance.new("LocalScript", UI["1e"])
+UI["22"]["Name"] = [[RippleEffect]]
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Owner.RippleEffect.Circle \\ --
+UI["23"] = Instance.new("ImageLabel", UI["22"])
+UI["23"]["ZIndex"] = 10
+UI["23"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+UI["23"]["ImageTransparency"] = 0.5
+UI["23"]["ImageColor3"] = Color3.fromRGB(0, 0, 0)
+UI["23"]["AnchorPoint"] = Vector2.new(0.5, 0.5)
+UI["23"]["Image"] = [[rbxassetid://266543268]]
+UI["23"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["23"]["BackgroundTransparency"] = 1
+UI["23"]["Name"] = [[Circle]]
+UI["23"]["Position"] = UDim2.new(0.5, 0, 0.5, 0)
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Above Owner \\ --
+UI["24"] = Instance.new("TextButton", UI["4"])
+UI["24"]["TextWrapped"] = true
+UI["24"]["BorderSizePixel"] = 0
+UI["24"]["AutoButtonColor"] = false
+UI["24"]["TextSize"] = 14
+UI["24"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["24"]["TextScaled"] = true
+UI["24"]["BackgroundColor3"] = Color3.fromRGB(145, 223, 255)
+UI["24"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["24"]["Size"] = UDim2.new(0, 200, 0, 50)
+UI["24"]["Name"] = [[HD Above Owner]]
+UI["24"]["ClipsDescendants"] = true
+UI["24"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["24"]["Text"] = [[HD Above Owner]]
+UI["24"]["Position"] = UDim2.new(0.51434, 0, 0.64857, 0)
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Above Owner.Script \\ --
+UI["25"] = Instance.new("Script", UI["24"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Above Owner.LocalScript \\ --
+UI["26"] = Instance.new("LocalScript", UI["24"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Above Owner.RemoteEvent \\ --
+UI["27"] = Instance.new("RemoteEvent", UI["24"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Above Owner.RippleEffect \\ --
+UI["28"] = Instance.new("LocalScript", UI["24"])
+UI["28"]["Name"] = [[RippleEffect]]
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Above Owner.RippleEffect.Circle \\ --
+UI["29"] = Instance.new("ImageLabel", UI["28"])
+UI["29"]["ZIndex"] = 10
+UI["29"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+UI["29"]["ImageTransparency"] = 0.5
+UI["29"]["ImageColor3"] = Color3.fromRGB(0, 0, 0)
+UI["29"]["AnchorPoint"] = Vector2.new(0.5, 0.5)
+UI["29"]["Image"] = [[rbxassetid://266543268]]
+UI["29"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["29"]["BackgroundTransparency"] = 1
+UI["29"]["Name"] = [[Circle]]
+UI["29"]["Position"] = UDim2.new(0.5, 0, 0.5, 0)
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.Close \\ --
+UI["2a"] = Instance.new("TextButton", UI["4"])
+UI["2a"]["TextWrapped"] = true
+UI["2a"]["BorderSizePixel"] = 0
+UI["2a"]["AutoButtonColor"] = false
+UI["2a"]["TextSize"] = 14
+UI["2a"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["2a"]["TextScaled"] = true
+UI["2a"]["BackgroundColor3"] = Color3.fromRGB(255, 50, 50)
+UI["2a"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["2a"]["Size"] = UDim2.new(0, 78, 0, 50)
+UI["2a"]["Name"] = [[Close]]
+UI["2a"]["ClipsDescendants"] = true
+UI["2a"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["2a"]["Text"] = [[X]]
+UI["2a"]["Position"] = UDim2.new(0.85086, 0, 0, 0)
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.Close.Script \\ --
+UI["2b"] = Instance.new("Script", UI["2a"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.Close.RippleEffect \\ --
+UI["2c"] = Instance.new("LocalScript", UI["2a"])
+UI["2c"]["Name"] = [[RippleEffect]]
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.Close.RippleEffect.Circle \\ --
+UI["2d"] = Instance.new("ImageLabel", UI["2c"])
+UI["2d"]["ZIndex"] = 10
+UI["2d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+UI["2d"]["ImageTransparency"] = 0.5
+UI["2d"]["ImageColor3"] = Color3.fromRGB(0, 0, 0)
+UI["2d"]["AnchorPoint"] = Vector2.new(0.5, 0.5)
+UI["2d"]["Image"] = [[rbxassetid://266543268]]
+UI["2d"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["2d"]["BackgroundTransparency"] = 1
+UI["2d"]["Name"] = [[Circle]]
+UI["2d"]["Position"] = UDim2.new(0.5, 0, 0.5, 0)
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin Loader \\ --
+UI["2e"] = Instance.new("TextButton", UI["4"])
+UI["2e"]["TextWrapped"] = true
+UI["2e"]["BorderSizePixel"] = 0
+UI["2e"]["AutoButtonColor"] = false
+UI["2e"]["TextSize"] = 14
+UI["2e"]["TextColor3"] = Color3.fromRGB(0, 0, 0)
+UI["2e"]["TextScaled"] = true
+UI["2e"]["BackgroundColor3"] = Color3.fromRGB(145, 223, 255)
+UI["2e"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+UI["2e"]["Size"] = UDim2.new(0, 301, 0, 50)
+UI["2e"]["Name"] = [[HD Admin Loader]]
+UI["2e"]["ClipsDescendants"] = true
+UI["2e"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["2e"]["Text"] = [[HD Admin Loader (Only If HD Admin is not in the game)]]
+UI["2e"]["Position"] = UDim2.new(0.21224, 0, 0.82857, 0)
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin Loader.Script \\ --
+UI["2f"] = Instance.new("Script", UI["2e"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin Loader.LocalScript \\ --
+UI["30"] = Instance.new("LocalScript", UI["2e"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin Loader.RemoteEvent \\ --
+UI["31"] = Instance.new("RemoteEvent", UI["2e"])
+
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin Loader.RippleEffect \\ --
+UI["32"] = Instance.new("LocalScript", UI["2e"])
+UI["32"]["Name"] = [[RippleEffect]]
+
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin Loader.RippleEffect.Circle \\ --
+UI["33"] = Instance.new("ImageLabel", UI["32"])
+UI["33"]["ZIndex"] = 10
+UI["33"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+UI["33"]["ImageTransparency"] = 0.5
+UI["33"]["ImageColor3"] = Color3.fromRGB(0, 0, 0)
+UI["33"]["AnchorPoint"] = Vector2.new(0.5, 0.5)
+UI["33"]["Image"] = [[rbxassetid://266543268]]
+UI["33"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+UI["33"]["BackgroundTransparency"] = 1
+UI["33"]["Name"] = [[Circle]]
+UI["33"]["Position"] = UDim2.new(0.5, 0, 0.5, 0)
+
+-- // Workspace.HDAdminRanks.Frame.Spawn \\ --
+UI["34"] = Instance.new("Script", UI["2"])
+UI["34"]["Name"] = [[Spawn]]
+
+-- // Workspace.HDAdminRanks.Frame.Dragify \\ --
+local function SCRIPT_3()
+local script = UI["3"]
 	local UIS = game:GetService("UserInputService")
 	function dragify(Frame)
 		dragToggle = nil
@@ -327,32 +451,20 @@ local function DDDNRH_fake_script() -- Frame.Dragify
 	
 	dragify(script.Parent)
 end
-coroutine.wrap(DDDNRH_fake_script)()
-local function NOXK_fake_script() -- HDVip.Script 
-	local script = Instance.new('Script', HDVip)
-
-	--eeee
-	local Remote = script.Parent.RemoteEvent
-	
-	Remote.OnServerEvent:Connect(function(plr)
-		local main = _G.HDAdminMain
-		main:GetModule("cf"):SetRank(game:GetService("Players")[plr.name], game.CreatorId, 1, "Perm")  
-	end)
-end
-coroutine.wrap(NOXK_fake_script)()
-local function BKAZUX_fake_script() -- HDVip.LocalScript 
-	local script = Instance.new('LocalScript', HDVip)
-
+task.spawn(SCRIPT_3)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Vip.LocalScript \\ --
+local function SCRIPT_8()
+local script = UI["8"]
 	local Remote = script.Parent.RemoteEvent
 	
 	script.Parent.MouseButton1Click:Connect(function()
 		Remote:FireServer()
 	end)
 end
-coroutine.wrap(BKAZUX_fake_script)()
-local function LYEGGE_fake_script() -- HDVip.RippleEffect 
-	local script = Instance.new('LocalScript', HDVip)
-
+task.spawn(SCRIPT_8)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Vip.RippleEffect \\ --
+local function SCRIPT_a()
+local script = UI["a"]
 	-- NOTE: Make sure the ZIndex of the button used is higher than other GUI parts behind
 	--       it, or this will not work correctly!
 	
@@ -499,32 +611,20 @@ local function LYEGGE_fake_script() -- HDVip.RippleEffect
 		fadeOutRipple(ripple) -- if it doesnt detect that it was unselected
 	end)
 end
-coroutine.wrap(LYEGGE_fake_script)()
-local function SWELKJ_fake_script() -- HDMod.Script 
-	local script = Instance.new('Script', HDMod)
-
-	--eeee
-	local Remote = script.Parent.RemoteEvent
-	
-	Remote.OnServerEvent:Connect(function(plr)
-		local main = _G.HDAdminMain
-		main:GetModule("cf"):SetRank(game:GetService("Players")[plr.name], game.CreatorId, 2, "Perm")  
-	end)
-end
-coroutine.wrap(SWELKJ_fake_script)()
-local function BMAHOL_fake_script() -- HDMod.LocalScript 
-	local script = Instance.new('LocalScript', HDMod)
-
+task.spawn(SCRIPT_a)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Mod.LocalScript \\ --
+local function SCRIPT_e()
+local script = UI["e"]
 	local Remote = script.Parent.RemoteEvent
 	
 	script.Parent.MouseButton1Click:Connect(function()
 		Remote:FireServer()
 	end)
 end
-coroutine.wrap(BMAHOL_fake_script)()
-local function FCBMV_fake_script() -- HDMod.RippleEffect 
-	local script = Instance.new('LocalScript', HDMod)
-
+task.spawn(SCRIPT_e)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Mod.RippleEffect \\ --
+local function SCRIPT_10()
+local script = UI["10"]
 	-- NOTE: Make sure the ZIndex of the button used is higher than other GUI parts behind
 	--       it, or this will not work correctly!
 	
@@ -671,32 +771,20 @@ local function FCBMV_fake_script() -- HDMod.RippleEffect
 		fadeOutRipple(ripple) -- if it doesnt detect that it was unselected
 	end)
 end
-coroutine.wrap(FCBMV_fake_script)()
-local function JFWBJCI_fake_script() -- HDAdmin.Script 
-	local script = Instance.new('Script', HDAdmin)
-
-	--eeee
-	local Remote = script.Parent.RemoteEvent
-	
-	Remote.OnServerEvent:Connect(function(plr)
-		local main = _G.HDAdminMain
-		main:GetModule("cf"):SetRank(game:GetService("Players")[plr.name], game.CreatorId, 3, "Perm")  
-	end)
-end
-coroutine.wrap(JFWBJCI_fake_script)()
-local function HHQET_fake_script() -- HDAdmin.LocalScript 
-	local script = Instance.new('LocalScript', HDAdmin)
-
+task.spawn(SCRIPT_10)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin.LocalScript \\ --
+local function SCRIPT_14()
+local script = UI["14"]
 	local Remote = script.Parent.RemoteEvent
 	
 	script.Parent.MouseButton1Click:Connect(function()
 		Remote:FireServer()
 	end)
 end
-coroutine.wrap(HHQET_fake_script)()
-local function XHDYZ_fake_script() -- HDAdmin.RippleEffect 
-	local script = Instance.new('LocalScript', HDAdmin)
-
+task.spawn(SCRIPT_14)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin.RippleEffect \\ --
+local function SCRIPT_16()
+local script = UI["16"]
 	-- NOTE: Make sure the ZIndex of the button used is higher than other GUI parts behind
 	--       it, or this will not work correctly!
 	
@@ -843,32 +931,20 @@ local function XHDYZ_fake_script() -- HDAdmin.RippleEffect
 		fadeOutRipple(ripple) -- if it doesnt detect that it was unselected
 	end)
 end
-coroutine.wrap(XHDYZ_fake_script)()
-local function JSJEX_fake_script() -- HDHeadAdmin.Script 
-	local script = Instance.new('Script', HDHeadAdmin)
-
-	--eeee
-	local Remote = script.Parent.RemoteEvent
-	
-	Remote.OnServerEvent:Connect(function(plr)
-		local main = _G.HDAdminMain
-		main:GetModule("cf"):SetRank(game:GetService("Players")[plr.name], game.CreatorId, 4, "Perm")  
-	end)
-end
-coroutine.wrap(JSJEX_fake_script)()
-local function MAXQGA_fake_script() -- HDHeadAdmin.LocalScript 
-	local script = Instance.new('LocalScript', HDHeadAdmin)
-
+task.spawn(SCRIPT_16)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD HeadAdmin.LocalScript \\ --
+local function SCRIPT_1a()
+local script = UI["1a"]
 	local Remote = script.Parent.RemoteEvent
 	
 	script.Parent.MouseButton1Click:Connect(function()
 		Remote:FireServer()
 	end)
 end
-coroutine.wrap(MAXQGA_fake_script)()
-local function TIOWX_fake_script() -- HDHeadAdmin.RippleEffect 
-	local script = Instance.new('LocalScript', HDHeadAdmin)
-
+task.spawn(SCRIPT_1a)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD HeadAdmin.RippleEffect \\ --
+local function SCRIPT_1c()
+local script = UI["1c"]
 	-- NOTE: Make sure the ZIndex of the button used is higher than other GUI parts behind
 	--       it, or this will not work correctly!
 	
@@ -1015,32 +1091,20 @@ local function TIOWX_fake_script() -- HDHeadAdmin.RippleEffect
 		fadeOutRipple(ripple) -- if it doesnt detect that it was unselected
 	end)
 end
-coroutine.wrap(TIOWX_fake_script)()
-local function BTNN_fake_script() -- HDOwner.Script 
-	local script = Instance.new('Script', HDOwner)
-
-	--eeee
-	local Remote = script.Parent.RemoteEvent
-	
-	Remote.OnServerEvent:Connect(function(plr)
-		local main = _G.HDAdminMain
-		main:GetModule("cf"):SetRank(game:GetService("Players")[plr.name], game.CreatorId, 5, "Perm")  
-	end)
-end
-coroutine.wrap(BTNN_fake_script)()
-local function NPUGUK_fake_script() -- HDOwner.LocalScript 
-	local script = Instance.new('LocalScript', HDOwner)
-
+task.spawn(SCRIPT_1c)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Owner.LocalScript \\ --
+local function SCRIPT_20()
+local script = UI["20"]
 	local Remote = script.Parent.RemoteEvent
 	
 	script.Parent.MouseButton1Click:Connect(function()
 		Remote:FireServer()
 	end)
 end
-coroutine.wrap(NPUGUK_fake_script)()
-local function SQTXW_fake_script() -- HDOwner.RippleEffect 
-	local script = Instance.new('LocalScript', HDOwner)
-
+task.spawn(SCRIPT_20)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Owner.RippleEffect \\ --
+local function SCRIPT_22()
+local script = UI["22"]
 	-- NOTE: Make sure the ZIndex of the button used is higher than other GUI parts behind
 	--       it, or this will not work correctly!
 	
@@ -1187,32 +1251,20 @@ local function SQTXW_fake_script() -- HDOwner.RippleEffect
 		fadeOutRipple(ripple) -- if it doesnt detect that it was unselected
 	end)
 end
-coroutine.wrap(SQTXW_fake_script)()
-local function IBXGNRE_fake_script() -- HDAboveOwner.Script 
-	local script = Instance.new('Script', HDAboveOwner)
-
-	--eeee
-	local Remote = script.Parent.RemoteEvent
-	
-	Remote.OnServerEvent:Connect(function(plr)
-		local main = _G.HDAdminMain
-		main:GetModule("cf"):SetRank(game:GetService("Players")[plr.name], game.CreatorId, 999999999999999, "Perm")  
-	end)
-end
-coroutine.wrap(IBXGNRE_fake_script)()
-local function HOBB_fake_script() -- HDAboveOwner.LocalScript 
-	local script = Instance.new('LocalScript', HDAboveOwner)
-
+task.spawn(SCRIPT_22)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Above Owner.LocalScript \\ --
+local function SCRIPT_26()
+local script = UI["26"]
 	local Remote = script.Parent.RemoteEvent
 	
 	script.Parent.MouseButton1Click:Connect(function()
 		Remote:FireServer()
 	end)
 end
-coroutine.wrap(HOBB_fake_script)()
-local function ECZB_fake_script() -- HDAboveOwner.RippleEffect 
-	local script = Instance.new('LocalScript', HDAboveOwner)
-
+task.spawn(SCRIPT_26)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Above Owner.RippleEffect \\ --
+local function SCRIPT_28()
+local script = UI["28"]
 	-- NOTE: Make sure the ZIndex of the button used is higher than other GUI parts behind
 	--       it, or this will not work correctly!
 	
@@ -1359,18 +1411,10 @@ local function ECZB_fake_script() -- HDAboveOwner.RippleEffect
 		fadeOutRipple(ripple) -- if it doesnt detect that it was unselected
 	end)
 end
-coroutine.wrap(ECZB_fake_script)()
-local function PRYYCK_fake_script() -- Close.Script 
-	local script = Instance.new('Script', Close)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.Parent.Frame.Visible = false
-	end)
-end
-coroutine.wrap(PRYYCK_fake_script)()
-local function SWUTW_fake_script() -- Close.RippleEffect 
-	local script = Instance.new('LocalScript', Close)
-
+task.spawn(SCRIPT_28)
+-- // Workspace.HDAdminRanks.Frame.Frame2.Close.RippleEffect \\ --
+local function SCRIPT_2c()
+local script = UI["2c"]
 	-- NOTE: Make sure the ZIndex of the button used is higher than other GUI parts behind
 	--       it, or this will not work correctly!
 	
@@ -1517,30 +1561,20 @@ local function SWUTW_fake_script() -- Close.RippleEffect
 		fadeOutRipple(ripple) -- if it doesnt detect that it was unselected
 	end)
 end
-coroutine.wrap(SWUTW_fake_script)()
-local function VLXUOG_fake_script() -- HDAdminLoader.Script 
-	local script = Instance.new('Script', HDAdminLoader)
-
-	local Remote = script.Parent.RemoteEvent
-	
-	Remote.OnServerEvent:Connect(function(plr)
-		require(3606855832):Fire(plr.name)  
-	end)
-end
-coroutine.wrap(VLXUOG_fake_script)()
-local function YIDS_fake_script() -- HDAdminLoader.LocalScript 
-	local script = Instance.new('LocalScript', HDAdminLoader)
-
+task.spawn(SCRIPT_2c)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin Loader.LocalScript \\ --
+local function SCRIPT_30()
+local script = UI["30"]
 	local Remote = script.Parent.RemoteEvent
 	
 	script.Parent.MouseButton1Click:Connect(function()
 		Remote:FireServer()
 	end)
 end
-coroutine.wrap(YIDS_fake_script)()
-local function ZKYQSU_fake_script() -- HDAdminLoader.RippleEffect 
-	local script = Instance.new('LocalScript', HDAdminLoader)
-
+task.spawn(SCRIPT_30)
+-- // Workspace.HDAdminRanks.Frame.Frame2.HD Admin Loader.RippleEffect \\ --
+local function SCRIPT_32()
+local script = UI["32"]
 	-- NOTE: Make sure the ZIndex of the button used is higher than other GUI parts behind
 	--       it, or this will not work correctly!
 	
@@ -1687,10 +1721,6 @@ local function ZKYQSU_fake_script() -- HDAdminLoader.RippleEffect
 		fadeOutRipple(ripple) -- if it doesnt detect that it was unselected
 	end)
 end
-coroutine.wrap(ZKYQSU_fake_script)()
-local function NIBAFBM_fake_script() -- Frame.Spawn 
-	local script = Instance.new('Script', Frame)
+task.spawn(SCRIPT_32)
 
-	script.Parent.Parent.ResetOnSpawn = false
-end
-coroutine.wrap(NIBAFBM_fake_script)()
+return UI["1"], require;
